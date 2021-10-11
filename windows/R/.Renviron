@@ -1,0 +1,3 @@
+PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
+R_GSCMD="${PROGRAMS_WINPATH}\gs\gs9.52\bin\gswin64.exe"
+language = en

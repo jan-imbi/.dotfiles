@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Jan Meis
+	email = meis@imbi.uni-heidelberg.de
+[merge]
+	tool = meld
+[mergetool "meld"]
+	path = ${PROGRAMS_x86_UNIXPATH}/Meld/Meld.exe
+[difftool "meld"]
+	path = ${PROGRAMS_x86_UNIXPATH}/Meld/Meld.exe
+[diff]
+	tool = meld
+[diff "tool.meld"]
+	path = ${PROGRAMS_x86_UNIXPATH}/Meld/Meld.exe
