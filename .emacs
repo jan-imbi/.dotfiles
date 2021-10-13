@@ -26,9 +26,7 @@
 (show-paren-mode 1)
 (global-display-line-numbers-mode)
 (setq display-line-numbers 'relative)
-
-(setq split-width-threshold 0)
-(setq split-height-threshold nil)
+(windmove-default-keybindings)
 
 
 ;; C++ IDE setup
@@ -129,8 +127,6 @@
           treemacs-width-is-initially-locked       t
           treemacs-workspace-switch-cleanup        nil)
 
-    ;; the defaul width and height of the icons is 22 pixels. If you are
-    ;; using a Hi-DPI display, uncomment this to double the icon size.
     (treemacs-resize-icons 22)
 
     (treemacs-follow-mode t)
@@ -163,7 +159,6 @@
 (use-package treemacs-magit
   :after (treemacs magit)
   :ensure t)
-
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
