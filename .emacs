@@ -54,6 +54,8 @@
   :ensure t)
 (add-hook 'after-init-hook 'global-company-mode)
 
+(use-package multiple-cursors
+  :ensure t)
 
 (use-package avy
   :ensure t)
@@ -196,7 +198,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(r-autoyas yasnippet xcscope which-key use-package treemacs-projectile treemacs-magit gruber-darker-theme flycheck ess dap-mode company cmake-font-lock)))
+   '(multiple-cursors r-autoyas yasnippet xcscope which-key use-package treemacs-projectile treemacs-magit gruber-darker-theme flycheck ess dap-mode company cmake-font-lock)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
