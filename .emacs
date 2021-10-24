@@ -26,10 +26,14 @@
 (show-paren-mode 1)
 (global-display-line-numbers-mode)
 (setq display-line-numbers 'relative)
+(setq display-line-numbers-type 'relative)
+
 (windmove-default-keybindings)
+(setq auto-save-file-name-transforms
+          `((".*" ,(concat user-emacs-directory "auto-save/") t)))
 
 
-;; C++ IDE setup
+;; IDE setup
 (use-package lsp-mode
   :ensure t)
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
@@ -38,6 +42,8 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+(setq flycheck-global-modes '(not ess-mode ess-r-mode ESS))
+
 (use-package lsp-treemacs
   :ensure t)
 (use-package projectile
@@ -46,6 +52,9 @@
   :ensure t)
 (use-package company
   :ensure t)
+(add-hook 'after-init-hook 'global-company-mode)
+
+
 (use-package avy
   :ensure t)
 (use-package which-key
@@ -54,6 +63,11 @@
   :ensure t)
 (use-package magit
   :ensure t)
+
+;; ESS setup
+(use-package ess
+  :ensure t)
+
 (use-package cmake-mode
   :ensure t)
 
@@ -167,6 +181,7 @@
       company-minimum-prefix-length 1
       lsp-idle-delay 0.1)
 
+
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools)
@@ -180,10 +195,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("03e26cd42c3225e6376d7808c946f7bed6382d795618a82c8f3838cd2097a9cc" default))
  '(package-selected-packages
-   '(cmake-font-lock cmake-mode cmake-mode: treemacs-magit treemacs-projectile yasnippet xcscope which-key use-package projectile gruber-darker-theme flycheck dap-mode company)))
+   '(r-autoyas yasnippet xcscope which-key use-package treemacs-projectile treemacs-magit gruber-darker-theme flycheck ess dap-mode company cmake-font-lock)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
