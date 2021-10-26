@@ -58,6 +58,7 @@
 (use-package company
   :ensure t)
 (add-hook 'after-init-hook 'global-company-mode)
+(setq company-global-modes '(not eshell-mode))
 
 (use-package multiple-cursors
   :ensure t)
