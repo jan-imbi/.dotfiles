@@ -26,6 +26,8 @@
   :ensure t)
 (load-theme 'gruber-darker t)
 
+(set-frame-font "Iosevka 16" nil t)
+
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
