@@ -25,8 +25,7 @@
 (use-package gruber-darker-theme
   :ensure t)
 (load-theme 'gruber-darker t)
-
-(set-frame-font "Iosevka 16" nil t)
+(set-frame-font "Iosevka 20" nil t)
 
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -36,6 +35,9 @@
 (global-display-line-numbers-mode)
 (setq display-line-numbers 'relative)
 (setq display-line-numbers-type 'relative)
+
+;; open in fullscreen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; forgot what this does
 (windmove-default-keybindings)
@@ -56,7 +58,12 @@
 (use-package lsp-treemacs
   :ensure t)
 (use-package projectile
-  :ensure t)
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
 (use-package company
   :ensure t)
 (add-hook 'after-init-hook 'global-company-mode)
