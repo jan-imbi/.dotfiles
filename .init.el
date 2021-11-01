@@ -121,14 +121,6 @@
   :ensure t)
 (use-package cmake-mode
   :ensure t)
-(with-eval-after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-  (require 'dap-cpptools)
-  (yas-global-mode))
-(add-hook 'c-mode-hook 'lsp)
-(add-hook 'c++-mode-hook 'lsp)
-(add-hook 'cmake-mode-hook 'lsp)
-(add-hook 'ess-mode-hook 'lsp)
 
 ;; Multicursor and visible text navigation
 (use-package multiple-cursors
@@ -150,6 +142,17 @@
 (setq flycheck-global-modes '(not ess-mode ess-r-mode ESS))
 (use-package dap-mode
   :ensure t)
+
+;; LSP hooks
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (require 'dap-cpptools)
+  (yas-global-mode))
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+(add-hook 'cmake-mode-hook 'lsp)
+(add-hook 'ess-mode-hook 'lsp)
+
 
 ;; File navigatior, project management and git
 (use-package treemacs
