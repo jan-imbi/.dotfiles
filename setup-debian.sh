@@ -9,4 +9,6 @@ cd /usr/share/fonts
 sudo wget https://github.com/be5invis/Iosevka/releases/download/v10.3.4/ttc-iosevka-10.3.4.zip
 sudo unzip ttc-iosevka-10.3.4.zip
 cd ~
+'[interop]' | sudo tee -a /etc/wsl.conf
+'appendWindowsPath = false' | sudo tee -a /etc/wsl.conf
 sh .dotfiles/install-texlive.sh

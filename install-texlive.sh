@@ -6,3 +6,4 @@ echo 'selected_scheme scheme-full' > temp.profile
 sudo perl install-tl -profile temp.profile
 cd ~
 rm -rf install-tl-*
+echo 'PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH' >> .bashrc
