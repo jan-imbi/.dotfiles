@@ -15,4 +15,4 @@ if ($vcxsrv) {
 }
 
 # Start vcxsrv with the flags needed.
-& "E:\programs\VcXsrv\vcxsrv.exe" :0 -multiwindow -clipboard -wgl -ac
+& "${Env:programfiles}\VcXsrv\vcxsrv.exe" :0 -multiwindow -nomultimonitors -clipboard -wgl -ac

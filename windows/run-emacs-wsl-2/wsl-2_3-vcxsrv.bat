@@ -1,2 +1,2 @@
 @rem Run VcXsrv
-start "" "E:\programs\VcXsrv\vcxsrv.exe" :0 -multiwindow -clipboard -wgl -ac
+start "" "${Env:programfiles}\VcXsrv\vcxsrv.exe" :0 -clipboard -wgl -ac
