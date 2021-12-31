@@ -78,30 +78,6 @@
 ;; org mode and pdf-tools
 (use-package org
   :ensure t)
-(use-package pdf-tools
- :ensure t
- :config
-  (require 'pdf-tools)
-  (require 'pdf-view)
-  (require 'pdf-misc)
-  (require 'pdf-occur)
-  (require 'pdf-util)
-  (require 'pdf-annot)
-  (require 'pdf-info)
-  (require 'pdf-isearch)
-  (require 'pdf-history)
-  (require 'pdf-links)
-  (pdf-tools-install :no-query))
-(use-package org-pdftools
-  :hook (org-mode . org-pdftools-setup-link))
-(setq org-file-apps '((remote . emacs)
-                      (auto-mode . emacs)
-                      (directory . emacs)
-                      (system . "setsid -w xdg-open %s")
-                      (t . system)))
-(add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
-(use-package org-ref
-  :ensure t)
 
 ;; Code completion and modes
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
@@ -152,50 +128,6 @@
 (add-hook 'c++-mode-hook 'lsp)
 (add-hook 'cmake-mode-hook 'lsp)
 (add-hook 'ess-mode-hook 'lsp)
-
-
-;; File navigatior, project management and git
-(use-package treemacs
-  :ensure t
-  :defer t
-  :init
-  (with-eval-after-load 'winum
-    (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
-  :config
-  (progn
-    (treemacs-resize-icons 22)
-   )
-  :bind
-  (:map global-map
-        ("M-0"       . treemacs-select-window)
-         ("C-x t t"   . treemacs)
-         ("C-x t C-t" . treemacs-find-file)
-	 ))
-(use-package lsp-treemacs
-  :ensure t)
-(use-package projectile
-  :ensure t
-  :init
-  (projectile-mode +1)
-  :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
-              ("C-c p" . projectile-command-map)))
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
-(use-package magit
-  :ensure t)
-(use-package treemacs-magit
-  :after (treemacs magit)
-  :ensure t)
-(setq gc-cons-threshold (* 100 1024 1024)
-      read-process-output-max (* 1024 1024)
-      treemacs-space-between-root-nodes nil
-      company-idle-delay 0.0
-      company-minimum-prefix-length 1
-      lsp-idle-delay 0.1)
 
 (provide '.init)
 ;;; .init ends here

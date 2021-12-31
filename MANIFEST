@@ -3,3 +3,4 @@
 .Renviron|symlink|
 .Rprofile|symlink|
 .vimrc|symlink|
+.imwheelrc|symlink|
