@@ -55,7 +55,10 @@
 (setq display-line-numbers-type 'relative)
 
 ;; Open in fullscreen
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;;(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; Window size at startup
+(when window-system (set-frame-size (selected-frame) 70 15))
 
 ;; Window navigation and force vertical splitting
 (windmove-default-keybindings)
