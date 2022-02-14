@@ -1,0 +1,6 @@
+{
+    "runSelectionAsJob": "Ctrl+J",
+    "sourceAsJob": "Ctrl+Shift+J",
+    "fold": "||Ctrl+F1",
+    "foldAll": ""
+}
