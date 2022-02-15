@@ -1,0 +1,2 @@
+set guifont=Iosevka:h12:cANSI:qDRAFT
+set guioptions -=T

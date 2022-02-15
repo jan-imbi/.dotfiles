@@ -40,5 +40,5 @@ deployManifest() {
 
 echo "--- Common configs ---"
 deployManifest MANIFEST
-echo "--- Linux configs ---"
-deployManifest MANIFEST.linux
+# echo "--- Linux configs ---"
+# deployManifest MANIFEST.linux
