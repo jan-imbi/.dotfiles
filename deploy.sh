@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export MSYS=winsymlinks:nativestrict
 SCRIPT_DIR="$( cd "$( dirname "$BASH_SOURCE[0]" )" && pwd )"
 
 symlinkFile() {
@@ -39,6 +40,4 @@ deployManifest() {
 }
 
 echo "--- Common configs ---"
-deployManifest MANIFEST
-# echo "--- Linux configs ---"
-# deployManifest MANIFEST.linux
+deployManifest $1

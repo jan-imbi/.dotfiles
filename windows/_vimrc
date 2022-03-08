@@ -2,3 +2,5 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 set langmenu=en_US
 let $LANG = 'en_US'
+set directory=C:\ProgramData\vim\swapfiles
+set backupdir=C:\ProgramData\vim\backupfiles
