@@ -1,0 +1,30 @@
+## This is a directory/file filter template for WinMerge
+name: Sweave and Rmd
+desc: Vorlesungsfolien etc
+
+## Select if filter is inclusive or exclusive
+## Inclusive (loose) filter lets through all items not matching rules
+## Exclusive filter lets through only items that match to rule
+## include or exclude
+def: include
+
+## Filters for filenames begin with f:
+## Filters for directories begin with d:
+## (Inline comments begin with " ##" and extend to the end of the line)
+
+f: \.vrb$ ## Filter for filename
+f: \.db$ ## Filter for filename
+f: \.tmp$ ## Filter for filename
+f: \.aux$ ## Filter for filename
+f: \.blg$ ## Filter for filename
+f: \.log$ ## Filter for filename
+f: \.nav$ ## Filter for filename
+f: \.out$ ## Filter for filename
+f: \.snm$ ## Filter for filename
+f: \.toc$ ## Filter for filename
+f: \.navsynctex$ ## Filter for filename
+f: \.bbl$ ## Filter for filename
+f: \.synctex$ ## Filter for filename
+f: \.Rhistory$ ## Filter for filename
+
+d: \\.Rproj.user$ ## Filter for directory
